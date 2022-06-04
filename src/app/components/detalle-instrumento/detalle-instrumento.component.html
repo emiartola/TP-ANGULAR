@@ -1,0 +1,28 @@
+<div class="d-flex container border ">
+    <div class="row">
+        <div class="col-lg-8">
+            <img style="max-width:50%, max-height= 50%" src="assets/images/{{ instrumento.imagen }}"
+                alt="instrumento" />
+            <div>
+                <p>Descripción :</p>
+                <p>{{instrumento?.descripcion}}</p>
+            </div>
+        </div>
+        <div class="col-lg-4 mt-3">
+            <p>{{instrumento?.cantidadVendida}} vendidos </p>
+            <h2><b>{{instrumento?.instrumento}}</b></h2>
+            <h2 class="mt-5"><b>${{instrumento?.precio}}</b></h2>
+            <h5>Marca : {{instrumento?.marca}}</h5>
+            <h5>Modelo : {{instrumento?.modelo}}</h5>
+
+            Costo Envío:
+            <span *ngIf="instrumento?.costoEnvio == 'G'" style="color:green; font-weight: bold;">
+                <b> Gratis </b>
+            </span>
+            <span *ngIf="instrumento?.costoEnvio !== 'G'" style="color: orange">
+                ${{instrumento?.costoEnvio}}
+            </span>
+        </div>
+        <button class="btn btn-primary mt-5" routerLink="/instrumentos"> Volver </button>
+    </div>
+</div>
